@@ -1,0 +1,62 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	total={170mm,257mm},
+	left=20mm,
+	top=20mm,
+}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage{float}
+
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+
+\begin{document}
+	
+	\begin{titlepage}
+		\newgeometry{top=5.5cm, bottom=3cm}
+		
+		\centering
+		{\huge\bfseries Technologie Sieciowe 2 - projekt\par}
+		
+		\vspace{0.5cm}
+		Prowadzący: Dr inż. Wojciech Kmiecik (E02-88c, środa TP 9:15) \\
+	
+		\vspace{1.1cm}
+		{\Large Dokumentacja projektu\par}
+		\vfill
+		
+		{\large\bfseries Jakub Dorda 235013\par}
+		{\large\bfseries Janusz Długosz 235746\par}
+		{\large\bfseries Marcin Kotas 235098\par}
+		
+		\vspace{1cm}
+		\today \\ \LaTeX
+		
+		\restoregeometry
+	\end{titlepage}
+	
+	%wprowadzenie
+	
+	\tableofcontents
+	\pagebreak
+	
+	\section{Wstęp - charakterystyka działalności instytucji}
+	
+	Celem projektu jest zaprojektowanie sieci komputerowej dla urzędu miejskiego. Instytucja posiada 3 wydziały zajmujące się	nieruchomościami, podatkami oraz pojazdami mechanicznymi. Na skutek zmian prawnych w kodeksie podatkowym oraz użytkowania wieczystego wystąpiła konieczność zatrudnienia większej ilości urzędników, więc zdecydowano o konieczności przeniesienia urzędu do większego budynku. Niestety gmina nie dysponowała odpowiednio dużym budynkiem, co poskutkowało koniecznością podziału urzędu na dwie nie połączone ze sobą części. Na skutek bezmyślnego oraz krótkowzrocznego zarządzania zasobami ludzkimi wszystkie działy zostały rozbite na poszczególne piętra wraz z filiami w drugim budynku.\\
+	
+	Projekt dotyczy wdrożenia sieci komputerowej w postaci zintegrowanego i jednolitego systemu informatycznego. Realizacja ma zapewniać rozwiązanie następujących problemów wynikających z wymagań projektu:
+	\begin{itemize}
+		\item wydziały są rozproszone po różnych piętrach i budynkach,
+		\item łącze między budynkami jest ograniczone i nie podlega modyfikacji w projekcie,
+		\item każdy dział wymaga stabilnego dostępu do sieci wewnętrznej oraz zewnętrznej,
+		\item sieć wewnętrzna oraz dostęp do Internetu musi spełniać odpowiednie standardy bezpieczeństwa
+	\end{itemize} 
+	
+	%\section{Inwentaryzacja zasobów: sprzętu, aplikacji, zasobów ludzkich}
+	%Urząd jest podzielony na dwa osobne budynki oddalone od siebie o 320 $m$ (choć jest to informacja zbędna) Okablowanie między budynkami jest optyczne jednomodowe. Pierwszy z nich jest podzielony na 4 piętra, każdy z działów posiada pomieszczenia na każdym z nich. Drugi budynek ma jedno piętro również posiada filie każdego z wydziałów pierwszego budynku. Urząd na każdym piętrze korzysta z drukarek sieciowych, w sumie z 8. Na piętrze 2 i 4 budynku pierwszego znajdują się punkty dostępowe WiFi, z tych sieci w sumie korzysta 28 urządzeń bezprzewodowych. 
+	
+	 
+\end{document}
