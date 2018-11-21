@@ -9,6 +9,7 @@
 \usepackage{graphicx}
 \usepackage{pdfpages}
 \usepackage{float}
+\usepackage{multirow}
 
 \usepackage{polski}
 \usepackage[utf8]{inputenc}
@@ -26,6 +27,8 @@
 	
 		\vspace{1.1cm}
 		{\Large Dokumentacja projektu\par}
+		\vspace{1.1cm}
+		{\Large \bfseries Zestaw 12\par}
 		\vfill
 		
 		{\large\bfseries Jakub Dorda 235013\par}
@@ -45,7 +48,7 @@
 	
 	\section{Wstęp - charakterystyka działalności instytucji}
 	
-	Celem projektu jest zaprojektowanie sieci komputerowej dla urzędu miejskiego. Instytucja posiada 3 wydziały zajmujące się	nieruchomościami, podatkami oraz pojazdami mechanicznymi. Na skutek zmian prawnych w kodeksie podatkowym oraz użytkowania wieczystego wystąpiła konieczność zatrudnienia większej ilości urzędników, więc zdecydowano o konieczności przeniesienia urzędu do większego budynku. Niestety gmina nie dysponowała odpowiednio dużym budynkiem, co poskutkowało koniecznością podziału urzędu na dwie nie połączone ze sobą części. Na skutek bezmyślnego oraz krótkowzrocznego zarządzania zasobami ludzkimi wszystkie działy zostały rozbite na poszczególne piętra wraz z filiami w drugim budynku.\\
+	Celem projektu jest zaprojektowanie sieci komputerowej dla urzędu miejskiego. Instytucja posiada 3 wydziały zajmujące się	nieruchomościami, podatkami oraz pojazdami mechanicznymi. Na skutek zmian prawnych w kodeksie podatkowym oraz użytkowania wieczystego wystąpiła konieczność zatrudnienia większej ilości urzędników, więc zdecydowano o konieczności przeniesienia urzędu do większego budynku. Niestety gmina nie dysponowała odpowiednio dużym budynkiem, co poskutkowało koniecznością podziału urzędu na dwie nie połączone ze sobą części. Na skutek bezmyślnego oraz krótkowzrocznego zarządzania zasobami ludzkimi wszystkie działy zostały rozbite na poszczególne piętra wraz z filiami w drugim budynku. Nowy adres urzędu - ul. Kazimierza Wielkiego 29 we Wrocławiu.\\
 	
 	Projekt dotyczy wdrożenia sieci komputerowej w postaci zintegrowanego i jednolitego systemu informatycznego. Realizacja ma zapewniać rozwiązanie następujących problemów wynikających z wymagań projektu:
 	\begin{itemize}
@@ -54,9 +57,104 @@
 		\item każdy dział wymaga stabilnego dostępu do sieci wewnętrznej oraz zewnętrznej,
 		\item sieć wewnętrzna oraz dostęp do Internetu musi spełniać odpowiednie standardy bezpieczeństwa
 	\end{itemize} 
-	
-	%\section{Inwentaryzacja zasobów: sprzętu, aplikacji, zasobów ludzkich}
-	%Urząd jest podzielony na dwa osobne budynki oddalone od siebie o 320 $m$ (choć jest to informacja zbędna) Okablowanie między budynkami jest optyczne jednomodowe. Pierwszy z nich jest podzielony na 4 piętra, każdy z działów posiada pomieszczenia na każdym z nich. Drugi budynek ma jedno piętro również posiada filie każdego z wydziałów pierwszego budynku. Urząd na każdym piętrze korzysta z drukarek sieciowych, w sumie z 8. Na piętrze 2 i 4 budynku pierwszego znajdują się punkty dostępowe WiFi, z tych sieci w sumie korzysta 28 urządzeń bezprzewodowych. 
-	
+
+	\noindent
+	W ramach projektu przedstawione zostaną:
 	 
+	\begin{itemize}
+		\item inwentaryzacja zasobów,
+		\item analiza potrzeb użytkowników,
+		\item założenia projektowe,
+		\item projekt sieci,
+		\item karty katalogowe proponowanych urządzeń 
+	\end{itemize} 
+	
+	
+	\section{Inwentaryzacja zasobów: sprzętu, aplikacji, zasobów ludzkich}
+	Urząd jest podzielony na dwa osobne budynki oddalone od siebie o 320 $m$. Okablowanie między budynkami jest optyczne jednomodowe. Pierwszy z nich jest podzielony na 4 piętra, każdy z działów posiada pomieszczenia na każdym z nich. Drugi budynek ma jedno piętro również posiada filie każdego z wydziałów pierwszego budynku. Urząd na każdym piętrze korzysta z drukarek sieciowych, w sumie z 8. Na piętrze 2 i 4 budynku pierwszego znajdują się punkty dostępowe WiFi, z tych sieci w sumie korzysta 28 urządzeń bezprzewodowych. Użytkownicy korzystają z następujących aplikacji biurowych: Przeglądarka, Wideokonferencja, VoIP, Klient\_FTP,	Komunikator, Praca\_w\_chmurze.\\
+	
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{l|c|c|c|c|c}
+			&\multicolumn{4}{c|}{Budynek 1}&Budynek 2\\
+			Grupa robocza&Piętro 1&Piętro 2&Piętro 3&Piętro 4&Piętro 1\\\hline
+			Nieruchomości&0&16&55&26&35\\
+			Podatki&21&32&34&22&26\\
+			Pojazdy&60&7&4&28&31\\\hline
+			&\multicolumn{5}{l}{Liczba drukarek}\\			
+			&1&3&1&2&1\\\hline
+			&\multicolumn{5}{l}{Liczba punktów dostępowych WiFi}\\				
+			&0&3&0&2&0\\\hline
+			&\multicolumn{5}{l}{Liczba urządzeń bezprzewodowych}\\				
+			&0&16&0&12&0\\
+		\end{tabular}
+		\caption{Ulokowanie pracowników i urządzeń}
+	\end{table}
+
+	\noindent
+	W urzędzie znajdują się 3 punkty dystrybucyjne:
+	\begin{description}
+		\item[MDF - Budynek 1, piętro 2] \hfill \\ punkty abonenckie: Budynek 1, Piętra 2 i 1
+		\item[IDF1 - Budynek 1, piętro 4] \hfill \\ punkty abonenckie: Budynek 1, Piętra 3 i 4
+		\item[IDF2 - Budynek 2, piętro 1] \hfill \\ punkty abonenckie: Budynek 2
+	\end{description}
+
+	\section{Analiza potrzeb użytkownika}
+	
+	\subsection{Wymagania}
+	
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{l|c|c|c}
+			Grupa rob. / Serwer&Serwer1&Serwer2&Drukarka\\\hline
+			Nieruchomości&400/250&350/550&10/160\\
+			Podatki&750/850&650/850&10/110\\
+			Pojazdy&400/450&300/450&10/160\\
+			WiFi&200/150&200/250&10/100\\
+		\end{tabular}
+		\caption{Transfer do serwerów lokalnych i drukarek (down / up) [kb/s]}
+	\end{table}
+
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{l|c|c|c}
+			Serwery internetowe&Do Internetu&Z Internetu&Liczba jednoczesnych sesji\\\hline
+			Serwer WWW&80&40&51\\
+			Serwer FTP&220&80&14\\
+		\end{tabular}
+		\caption{Transfer do/ z Internetu na jedną sesję (internautę) [kb/s]}
+	\end{table}
+
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{l|c|c|c|c|c|c}
+			Gr. rob./App&Przegl.&Wideokonf.&VoIP&Klient\_FTP&Komunikator&Chmura\\\hline
+			Nieruchomości&0/0&40/40&0/0&0/0&0/0&40/45\\
+			Podatki&41/10&0/0&20/20&71/16&0/0&0/0\\
+			Pojazdy&76/10&40/40&20/20&0/0&0/0&29/30\\
+			WiFi&78/10&0/0&0/0&58/16&15/15&44/24\\
+		\end{tabular}
+		\caption{Wymagania dot. przepływów generowanych przez aplikacje użytkownika z/ do internetu  (transfer przypadający na jednego użytkownika)  - dotyczy również użytkowników WiFi (down / up) [kb/s]}
+	\end{table}
+
+	\subsection{Analiza wymagań przepustowości}
+	
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{l|c|c|c|c|c|l}
+			&&Nieruchomości&Podatki&Pojazdy&WiFi&$\Sigma$\\\hline
+			\multirow{2}{*}{MDF}&LAN&26,875&166,66&115,81&14,2&323,545\\
+			&NET&1,25/1,33& 6,83/2,38&10,8/6,55&3,1/1,02&21,98/11,28\\\hline
+			\multirow{2}{*}{IDF1}&LAN&136&176&55,31&10,7&378,01\\
+			&NET&6,33/6,72&7,22/2,52&5,16/3,13&2,3/0,77&21,01/13,14\\\hline
+			\multirow{2}{*}{IDF2}&LAN&56,8&81,8&53,6&\multirow{2}{*}{-}&192,2\\
+			&NET&2,74/2,91&3,35/1,17&5,0/3,1&&11,09/7,18\\
+		\end{tabular}
+		\caption{Analiza przewidywanego obciążenia sieci - (down / up) [Mb/s]}
+	\end{table}	
+
+	\section{Założenia projektowe}
+	
+	Założenia projektowe obejmują zaprojektowanie sieci lokalnej z dostępem do Internetu. Dwa budynki urzędu połączone są ze sobą kablem światłowodowym jednomodowym, który jest wystarczający na zapewnienie przepustowości wymaganej przez budynek 2 (IDF2). Punkt pośredni IDF1 zostanie podłączony kablem gigabitowym. Serwery WWW oraz FTP umieszczone zostaną w DMZ podłączonej do Głównego Punktu Dystrybucyjnego (MDF). MDF posiada główne i jedyne podłączenie urzędu do Internetu. Do podłączenia pojedynczych stacji roboczych wystarczą kable Ethernetowe o przepustowości 10 Mb/s (cat 3), które zgodnie z wymaganiami są wystarczające, aczkolwiek zgodnie ze współczesnym standardem w nowych instalacjach montuje się kable zgodne z cat 5e lub cat 6, więc zalecany jest montaż kabli 100 Mb/s. Switche połączone będą ze sobą kablami 1 Gb/s. Minimalna wymagana prędkość łącza internetowego wynosi 54,08 Mb/s dla downloadu oraz 31,6 Mb/s uploadu.
+
 \end{document}

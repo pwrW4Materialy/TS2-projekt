@@ -1,1 +1,6 @@
 \contentsline {section}{\numberline {1}Wst\IeC {\k e}p - charakterystyka dzia\IeC {\l }alno\IeC {\'s}ci instytucji}{2}
+\contentsline {section}{\numberline {2}Inwentaryzacja zasob\IeC {\'o}w: sprz\IeC {\k e}tu, aplikacji, zasob\IeC {\'o}w ludzkich}{2}
+\contentsline {section}{\numberline {3}Analiza potrzeb u\IeC {\.z}ytkownika}{3}
+\contentsline {subsection}{\numberline {3.1}Wymagania}{3}
+\contentsline {subsection}{\numberline {3.2}Analiza wymaga\IeC {\'n} przepustowo\IeC {\'s}ci}{4}
+\contentsline {section}{\numberline {4}Za\IeC {\l }o\IeC {\.z}enia projektowe}{4}
