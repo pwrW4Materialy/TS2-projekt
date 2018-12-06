@@ -153,8 +153,45 @@
 		\caption{Analiza przewidywanego obciążenia sieci - (down / up) [Mb/s]}
 	\end{table}	
 
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{l|c|c}
+			Serwery internetowe&$\Sigma$ download&$\Sigma$ upload\\\hline
+			Serwer WWW&2040&4080\\
+			Serwer FTP&1120&3080\\
+		\end{tabular}
+		\caption{Wymagana przepustowość transferu do/ z Internetu [kb/s]}
+	\end{table}
+
+	\subsection{Suma wymagań przepustowości łącza Internetowego}
+
+	Minimalna wymagana prędkość łącza internetowego wynosi 57,17 Mb/s dla downloadu oraz 38,59 Mb/s uploadu.
+	
+	\subsection{Wymagana przepustowość punktów dystrybucyjnych}
+	
+	IDF1 oraz IDF2 będą podłączone do MDF, więc główny punkt dystrybucyjny musi zapewnić odpowiednią przepustowość dla pośrednich punktów dystrybucyjnych. Dodatkowo do MDF podłączone są serwery WWW oraz FTP, co więcej musi obsłużyć ruch lokalny LAN do dwóch serwerów lokalnych.
+	
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{r|l}
+			DF & $\Sigma$\\\hline
+			IDF1 & 412,16\\
+			IDF2 & 210,47\\
+			MDF & 989,51
+		\end{tabular}
+		\caption{Wymagana przepustowość punktów dystrybucyjnych [Mb/s]}
+	\end{table}
+
 	\section{Założenia projektowe}
 	
-	Założenia projektowe obejmują zaprojektowanie sieci lokalnej z dostępem do Internetu. Dwa budynki urzędu połączone są ze sobą kablem światłowodowym jednomodowym, który jest wystarczający na zapewnienie przepustowości wymaganej przez budynek 2 (IDF2). Punkt pośredni IDF1 zostanie podłączony kablem gigabitowym. Serwery WWW oraz FTP umieszczone zostaną w DMZ podłączonej do Głównego Punktu Dystrybucyjnego (MDF). MDF posiada główne i jedyne podłączenie urzędu do Internetu. Do podłączenia pojedynczych stacji roboczych wystarczą kable Ethernetowe o przepustowości 10 Mb/s (cat 3), które zgodnie z wymaganiami są wystarczające, aczkolwiek zgodnie ze współczesnym standardem w nowych instalacjach montuje się kable zgodne z cat 5e lub cat 6, więc zalecany jest montaż kabli 100 Mb/s. Switche połączone będą ze sobą kablami 1 Gb/s. Minimalna wymagana prędkość łącza internetowego wynosi 54,08 Mb/s dla downloadu oraz 31,6 Mb/s uploadu.
-
+	\begin{itemize}
+		\item Dwa budynki urzędu połączone są ze sobą kablem światłowodowym jednomodowym, który jest wystarczający na zapewnienie przepustowości wymaganej przez budynek 2 (IDF2),
+		\item punkt pośredni IDF1 zostanie podłączony kablem gigabitowym,
+		\item serwery WWW oraz FTP umieszczone zostaną w DMZ podłączonej do Głównego Punktu Dystrybucyjnego (MDF),
+		\item MDF posiada główne i jedyne podłączenie urzędu do Internetu,
+		\item stacje robocze podłączone zostaną kablami 100 Mb/s zgodnie ze współczesnym standardem,
+		\item switche połączone będą ze sobą kablami 1 Gb/s,
+		\item serwery podłączone zostaną do MDF za pomocą kabli 1 Gb/s.
+	\end{itemize}
+	
 \end{document}

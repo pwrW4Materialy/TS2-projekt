@@ -3,4 +3,6 @@
 \contentsline {section}{\numberline {3}Analiza potrzeb u\IeC {\.z}ytkownika}{3}
 \contentsline {subsection}{\numberline {3.1}Wymagania}{3}
 \contentsline {subsection}{\numberline {3.2}Analiza wymaga\IeC {\'n} przepustowo\IeC {\'s}ci}{4}
+\contentsline {subsection}{\numberline {3.3}Suma wymaga\IeC {\'n} przepustowo\IeC {\'s}ci \IeC {\l }\IeC {\k a}cza Internetowego}{4}
+\contentsline {subsection}{\numberline {3.4}Wymagana przepustowo\IeC {\'s}\IeC {\'c} punkt\IeC {\'o}w dystrybucyjnych}{4}
 \contentsline {section}{\numberline {4}Za\IeC {\l }o\IeC {\.z}enia projektowe}{4}
