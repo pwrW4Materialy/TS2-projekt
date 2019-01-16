@@ -220,11 +220,12 @@
 		\item Switche SFP (B1P2S0, B2P1S0)- Cisco SG350-10SFP x2
 		\item Punkty dostępowe wifi - Access Point Cisco Aironet 2702I-E-K9 x5
 	\end{itemize}
+		Przełączniki Cisco Catalyst C9300-48T zostały wybrane ze względu na dużą ilość portów i łatwość dalszej rozbudowy sieci. Charakteryzują się dobrymi parametrami w stosunku do ceny. Cisco Catalyst WS-C3650-24TS zostały wybrane w miejscach, gdzie nie była potrzebna duża ilość portów i 24, które posiada okazały się wystarczające. Projekt sieci wymagał skomunikowania dwóch budynków kablem światłowodowym. Z tego względu zostały wybrane dwa przełączniki Cisco SG350-10SFP, które posiadają wymagany port do obsługi przewodów optycznych. Zapora Cisco Firepower 2110 charakteryzuje się  bardzo zadowalającą skutecznością i niezawodnością, która jest niezbędna w budynku użyteczności publicznej.  Punkty dostępowe pozwalają na połączenie wymaganej ilości urządzeń ze sporym zapasem i dostarczenie im dostępu do internetu o parametrach zadowalających prędkościach. Router Cisco 4451-X pozwala na komunikację z internetem przy czym jest bardzo niezawodny oraz posiada podzespoły mogące spokojnie zaspokoić sieć o wymaganej wielkości. 
 
 	\subsection{Projekt adresacji IP}
 	
 		\begin{figure}[H]
-			\centerin
+			\centering
 			\includegraphics[width = \textwidth]{obrazki/vlany.png}
 			\caption{Adresacja sieci}
 			\label{fig:vlany}
@@ -232,18 +233,58 @@
 	    
 	\subsection{Projekt konfiguracji urządzeń}
 	
+	Na urządzeniach sieciowych firmy Cisco zostanie
+	aktywowane zdalne logowanie przez protokół SSH w wersji drugiej oraz zostanie wyłączony
+	serwer protokołu Telnet. Uruchomiony zostanie  szyfrowanie haseł w plikach
+	konfiguracyjnych oraz  opcja wymuszające logowanie się za
+	pomocą danych przechowywanych w lokalnej bazie. Zostanie utworzone
+	wiele kont użytkowników po jednym dla każdego administratora. Dodatkowo ustawione zostanie zapisywanie logów.
+	Każdy wykorzystywany port dostępowy będzie przydzielony do
+	odpowiedniego VLAN’a, a reszta portów dezaktywowana.
+	Switche szkieletowe w MDF będą pracowały w trybie warstwy trzeciej. Dzięki
+	temu nie będzie konieczne wykorzystanie dodatkowych routerów.
+	
+	W celu odizolowania serwerów internetowych od reszty urządzeń w sieci lokalne, umieszczone zostaną w strefie DMZ. Między siecią lokalną, a DMZ znajduje się ściana ogniowa. Aby zapobiec routingowi pomiędzy strefą
+	DMZ, a pozostałymi urządzeniami, zostanie wykorzystana lista kontroli dostępu (ACL).
+
+	W interfejsach sieciowych routera zostaną przypisane publiczne adresy IP przyznane przez
+    ISP. Ruch sieciowy do/z serwerów w strefie zdemilitaryzowanej na wybranych portach zostanie przekierowany na adresy publiczne przypisane do
+	routera. Ponieważ w sieci wykorzystano prywatną adresację, wdrożony zostanie mechanizm
+	NAT PAT, z lub do wszystkich podsieci prywatnych.
+	Punkty dostępowe sieci Wi-Fi zostaną skonfigurowane tak aby rozgłaszały tę samą sieć, o tym
+	samym SSID, co pozwoli na przełączanie się między odpowiednimi punktami automatycznie.
+	Sama sieć będzie zabezpieczona hasłem dostępowym z szyfrowaniem WPA2-PSK Enterprise.
+	
+	
 	\subsection{Projekt podłączenia do Internetu}
+	W urzędzie zostanie podłączony internet którego dostawcą będzie Orange, która na dzień dzisiejszy
+	zapewnia 1Gb/s pobierania oraz 100 Mb/s za 69,99 zł/mc przez pierwszy rok, a później za 99,99 zł/mc. Dodatkowo za opłatę miesięczną 20 zł zapewniony został publiczny, statyczny adres IP. Okres umowy obejmuje 24 miesiące.
 	
 	\subsection{Kosztorys}
 	
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{c|c|c|c}
+			Nazwa&Ilość szt.&Cena netto za szt. (PLN)&suma (PLN)\\\hline
+			Cisco 4451-X&1&48 508,70&48 508,70\\
+			Cisco Firepower 2110&1&25 373,53&25 373,53\\
+			Cisco Catalyst WS-C3650-24TS&2&9 128,67&18 257,34\\
+			Cisco Catalyst C9300-48T&8&18 362,05&146 896,40\\
+			Cisco SG350-10SFP&2&860,21&1720,42\\
+			Cisco Aironet 2702I-E-K9&5&2 401,00&12 005,00\\\hline
+			\multicolumn{3}{r|}{Suma:}&252 761,39
+		\end{tabular}
+	\end{table}
+
 	\section{Karty katalogowe proponowanych urządzeń}
 	
 	\begin{itemize}
-		\item Cisco ASR 1002-X - https://www.cisco.com/c/en/us/support/routers/asr-1002-x-router/model.html
+		\item Cisco 4451-X - https://www.cisco.com/c/en/us/support/routers/4451-x-integrated-services-router-isr/model.html
 		\item Cisco Firepower 2110 - https://www.cisco.com/c/en/us/support/security/firepower-2110-security-appliance/model.html
-		\item Cisco Catalyst C9200-48P - https://www.cisco.com/c/en/us/support/switches/catalyst-9200-48p-4g-switch/model.html
+		\item Cisco Catalyst WS-C3650-24TS - https://www.cisco.com/c/en/us/support/switches/catalyst-3650-24ts-s-switch/model.html
 		\item Cisco Catalyst C9300-48T - https://www.cisco.com/c/en/us/support/switches/catalyst-9300-48t-a-switch/model.html
 		\item Cisco SG350-10SFP - https://www.cisco.com/c/en/us/support/switches/sg350-10sfp-10-port-gigabit-managed-sfp-switch/model.html
+		\item Cisco Aironet 2702I-E-K9 - https://www.cisco.com/c/en/us/products/collateral/wireless/aironet-2700-series-access-point/datasheet-c78-730593.html
 	\end{itemize}
 	
 \end{document}
